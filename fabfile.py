@@ -1,7 +1,7 @@
 from fabric.api import env, local, put, run
 
 env.user = 'ubuntu'
-env.hosts = ['54.173.187.6', '100.25.215.210']
+env.hosts = ['54.162.229.207', '100.25.215.210']
 
 def do_pack():
         folder = "/root/AirBnB_clone_v2/web_static"
