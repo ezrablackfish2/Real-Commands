@@ -10,6 +10,7 @@ sudo chown -R nginx /run/nginx
 
 sudo mkdir /run/pid
 sudo sed -i 's|pid /run/nginx.pid;|pid /run/pid/nginx.pid;|g' /etc/nginx/nginx.conf
+sudo sed -i 's|PIDFile=/run/nginx.pid |PIDFile=/run/pid/nginx.pid |g' /lib/systemd/system/nginx.service
 sudo chown -R nginx /run/pid
 sed -i 's/^user .*;/user nginx;/g' /etc/nginx/nginx.conf
 sudo chmod 644 /etc/nginx/nginx.conf
