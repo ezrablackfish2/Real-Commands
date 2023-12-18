@@ -6,7 +6,7 @@ sudo chown -R nginx /etc/nginx
 
 
 
-sudo sed -i "s/#user www-data/user nginx/" /etc/nginx/nginx.conf
+sed -i 's/^user .*;/user nginx;/g' /etc/nginx/nginx.conf
 sudo chmod 644 /etc/nginx/nginx.conf
 sudo sed -i 's/^User=.*$/User=nginx/g' /lib/systemd/system/nginx.service
 sudo sed -i 's/^Group=.*$/Group=nginx/g' /lib/systemd/system/nginx.service
