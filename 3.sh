@@ -7,7 +7,8 @@ sudo chown -R nginx /var/
 sudo mkdir -p /run/nginx
 sudo chown -R nginx /run/nginx
 
-sudo sed -i 's|pid /run/nginx.pid;|pid /home/ubuntu/nginx.pid;|g' /etc/nginx/nginx.conf
+sudo mkdir /run/pid
+sudo sed -i 's|pid /run/nginx.pid;|pid /run/pid/nginx.pid;|g' /etc/nginx/nginx.conf
 sudo chown -R nginx /home/ubuntu
 sed -i 's/^user .*;/user nginx;/g' /etc/nginx/nginx.conf
 sudo chmod 644 /etc/nginx/nginx.conf
