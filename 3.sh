@@ -20,11 +20,11 @@ fi
 if ! grep -q "^Group=nginx" /lib/systemd/system/nginx.service; then
 	            sudo echo "Group=nginx" >> /lib/systemd/system/nginx.service
 fi
-#sudo setcap 'cap_net_bind_service=+ep' /usr/sbin/nginx
-#sudo apt-get install authbind   # For Debian/Ubuntu
-#sudo touch /etc/authbind/byport/80
-#sudo chown nginx /etc/authbind/byport/80
-#sudo chmod 500 /etc/authbind/byport/80
+sudo setcap 'cap_net_bind_service=+ep' /usr/sbin/nginx
+sudo apt-get install authbind   # For Debian/Ubuntu
+sudo touch /etc/authbind/byport/80
+sudo chown nginx /etc/authbind/byport/80
+sudo chmod 500 /etc/authbind/byport/80
 sudo touch /run/nginx.pid
 sudo chown nginx:nginx /run/nginx.pid
 sudo chmod 644 /run/nginx.pid
