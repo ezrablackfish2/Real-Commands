@@ -4,7 +4,7 @@
 sudo useradd -r nginx
 sudo chown -R nginx /etc/nginx
 sudo chown -R nginx /var/
-sudo mkdir -p /run/nginx
+#sudo mkdir -p /run/nginx
 sudo chown -R nginx /run/nginx
 
 #sudo mkdir /run/pid
