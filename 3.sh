@@ -29,6 +29,19 @@ sudo chmod 500 /etc/authbind/byport/80
 sudo touch /run/nginx.pid
 sudo chown nginx:nginx /run/nginx.pid
 sudo chmod 644 /run/nginx.pid
+SERVICE_FILE="/lib/systemd/system/nginx.service"
+
+# Check if the service file exists
+if [ -f "$SERVICE_FILE" ]; then
+	    # Add necessary lines to the service file
+	        echo -e "\nModifying Nginx service file..."
+
+		    # Append lines to the service file
+		        cat <<EOT | sudo tee -a "$SERVICE_FILE" > /dev/null
+[Service]
+PermissionsStartOnly=true
+ExecStartPre=setcap 'cap_net_bind_service=+ep' /usr/sbin/nginx
+EOT
 
 
 
