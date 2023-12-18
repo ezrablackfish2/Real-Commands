@@ -8,8 +8,7 @@ sudo chown -R nginx /etc/nginx
 
 sed -i 's/^user .*;/user nginx;/g' /etc/nginx/nginx.conf
 sudo chmod 644 /etc/nginx/nginx.conf
-sudo sed -i 's/^User=.*$/User=nginx/g' /lib/systemd/system/nginx.service
-sudo sed -i 's/^Group=.*$/Group=nginx/g' /lib/systemd/system/nginx.service
+sudo sed -i '/\[Service\]/a User=nginx\nGroup=nginx'
 if ! grep -q "^User=nginx" /lib/systemd/system/nginx.service; then
 	    sudo echo "User=nginx" >> /lib/systemd/system/nginx.service
 fi
