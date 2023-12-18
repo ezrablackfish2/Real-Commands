@@ -11,20 +11,7 @@ sudo chown -R nginx /run/nginx
 sudo mkdir /run/pid
 sudo sed -i 's|pid /run/nginx.pid;|pid /run/pid/nginx.pid;|g' /etc/nginx/nginx.conf
 
-
-file_path="/lib/systemd/system/nginx.service"
-new_pidfile="PIDFILE=/run/pid/nginx.pid"
-old_pidfile="PIDFILE=/run/nginx.pid"
-
-# Check if the file exists
-if [ -f "$file_path" ]; then
-	    # Use sed to replace the old PIDFILE value with the new one
-	        sudo sed -i "s|$old_pidfile|$new_pidfile|g" "$file_path"
-		    echo "PIDFILE in nginx.service updated successfully."
-	    else
-		        echo "nginx.service file not found at $file_path."
-fi
-
+sudo sed -i 's|PIDFile=/run/nginx.pid|PIDFile=/run/pid/nginx.pid|g' /lib/systemd/system/nginx.service
 
 
 sudo chown -R nginx /run/pid
