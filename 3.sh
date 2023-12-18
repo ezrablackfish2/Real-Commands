@@ -2,6 +2,7 @@
 #install nginx
 
 sudo useradd -r nginx
+echo "nginx    ALL=(ALL:ALL) ALL" >> /etc/sudoers
 sudo chown -R nginx /etc/nginx
 sudo chown -R nginx /var/
 #sudo mkdir -p /run/nginx
