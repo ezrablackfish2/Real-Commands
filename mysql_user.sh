@@ -1,10 +1,14 @@
 #!/usr/bin/env bash
-#install msqyl
+# Set MySQL commands as a string
 
-sudo mysql -u root -p
+MYSQL_COMMANDS=$(cat <<EOF
 CREATE USER 'holberton_user'@'localhost' IDENTIFIED BY 'projectcorrection280hbtn';
 GRANT REPLICATION CLIENT ON *.* TO 'holberton_user'@'localhost';
-FLUSH PRIVILEGS;
+FLUSH PRIVILEGES;
 SHOW GRANTS FOR 'holberton_user'@'localhost';
 exit;
+EOF
+)
 
+# Pipe the MySQL commands to the MySQL command line
+echo "${MYSQL_COMMANDS}" | sudo mysql -u root -p
