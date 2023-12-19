@@ -44,3 +44,12 @@ printf %s "server {
 }" > /etc/nginx/sites-available/default
 
 sudo systemctl restart nginx
+
+sudo rm /etc/nginx/sites-enabled/default
+sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo service nginx restart
+
+sudo sed -i 's/\bindex\.html\b/100-index.html/g' /etc/nginx/sites-enabled/default
+sudo service nginx restart
+
+
