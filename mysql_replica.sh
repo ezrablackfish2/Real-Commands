@@ -2,7 +2,7 @@
 # Set MySQL commands as a string
 
 MYSQL_COMMANDS=$(cat <<EOF
-CREATE USER 'replica_user'@'%' IDENTIFIED BY 'projectcorrection280hbtn';
+CREATE USER IF NOT EXISTS 'replica_user'@'%' IDENTIFIED BY 'projectcorrection280hbtn';
 GRANT REPLICATION SLAVE ON *.* TO "replica_user"@"%";
 GRANT SELECT ON mysql.user TO 'holberton_user'@'localhost';
 FLUSH PRIVILEGES;
