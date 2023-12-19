@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 #install msqyl
 
-sudo apt update
-sudo apt install mysql-server
-sudo mysql_secure_installation
+sudo apt-get update
+sudo apt-get install mysql-server
 sudo systemctl start mysql
-sudo systemctl status mysql
-sudo systemctl enable mysql
+mysql -u root -p
