@@ -10,7 +10,7 @@ sudo service mysql restart
 sudo service mysql status
 
 MYSQL_COMMANDS=$(cat <<EOF
-CHANGE MASTER TO MASTER_HOST='100.27.5.198', MASTER_USER='replica_user', MASTER_PASSWORD='tutu@12345', MASTER_LOG_FILE='', MASTER_LOG_POS='';
+CHANGE MASTER TO MASTER_HOST='100.27.5.198', MASTER_USER='replica_user', MASTER_PASSWORD='tutu@12345', MASTER_LOG_FILE='mysql-bin.000002', MASTER_LOG_POS='157';
 EOF
 )
 
