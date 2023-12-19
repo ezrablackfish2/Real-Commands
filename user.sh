@@ -38,6 +38,6 @@ sudo chmod 644 /run/nginx.pid
 
 
 
-systemctl daemon-reload
-service nginx restart
-service nginx status
+sudo systemctl daemon-reload
+sudo service nginx restart
+sudo service nginx status

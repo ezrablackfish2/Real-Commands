@@ -12,3 +12,4 @@ sudo touch /etc/haproxy/haproxy.cfg
 sudo cat ./haproxy >> /etc/haproxy/haproxy.cfg
 
 sudo service haproxy restart
+sudo service haproxy status

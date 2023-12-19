@@ -23,3 +23,4 @@ sudo echo "
 " >> /etc/haproxy/haproxy.cfg
 
 sudo service haproxy start
+sudo service haproxy status
