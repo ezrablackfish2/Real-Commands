@@ -5,6 +5,8 @@ sudo apt-get install -y software-properties-common
 sudo add-apt-repository -y ppa:vbernat/haproxy-2.8
 sudo apt-get -y update
 sudo apt-get install -y haproxy
+sudo ufw disable
+
 
 sudo echo "ENABLED=1" > /etc/default/haproxy
 
