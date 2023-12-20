@@ -3,7 +3,7 @@
 
 sudo echo "log_bin = /var/log/mysql/mysql-bin.log
 server-id = 1">> /etc/mysql/mysql.conf.d/mysqld.cnf
-
+sudo ufw allow 3306
 sudo service mysql restart
 sudo service mysql status
 
