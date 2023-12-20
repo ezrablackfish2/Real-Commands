@@ -7,7 +7,7 @@ sudo ufw app list
 sudo ufw allow 'Ngnix HTTP'
 sudo ufw disable
 sudo ufw status
-sudo apt-get install curl
+sudo apt-get install curl -y
 curl -4 icanhazip.com
 sudo systemctl start nginx
 sudo mkdir /data
