@@ -8,6 +8,7 @@ binlog_do_db            = tyrell_corp
 relay-log = /var/log/mysql/mysql-relay-bin.log
 " >> /etc/mysql/mysql.conf.d/mysqld.cnf
 sudo sed -i 's|bind-address|# bind-address|g' /etc/mysql/mysql.conf.d/mysqld.cnf
+sudo sed -i 's|mysqlx-# bind-address|mysqlx-bind-address|g' /etc/mysql/mysql.conf.d/mysqld.cnf
 sudo ufw allow 3306
 sudo service mysql restart
 sudo service mysql status
