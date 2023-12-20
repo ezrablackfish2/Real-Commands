@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 # Set MySQL commands as a string
 
-sudo echo "log_bin = /var/log/mysql/mysql-bin.log
-server-id = 2
+sudo echo "
+log_bin                 = /var/log/mysql/mysql-bin.log
+server-id               = 2
+binlog_do_db            = tyrell_corp
 relay-log = /var/log/mysql/mysql-relay-bin.log
-binlog_db = tyrell_corp" >> /etc/mysql/mysql.conf.d/mysqld.cnf
+" >> /etc/mysql/mysql.conf.d/mysqld.cnf
 
 sudo service mysql restart
 sudo service mysql status
